@@ -29,7 +29,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="ScratchCat-Small" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-aj-iGD">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-aj-iGD">
                                 <rect key="frame" x="20" y="121" width="320" height="320"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -101,22 +101,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Q08-9C-RFU">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Q08-9C-RFU">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="89.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cre-wP-GdW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cre-wP-GdW">
                                             <rect key="frame" x="104" y="11" width="255" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="bQa-tL-U2o"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-TM-Q1P" customClass="RatingControl" customModule="FoodTrackerApp" customModuleProvider="target">
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-TM-Q1P" customClass="RatingControl" customModule="FoodTrackerApp" customModuleProvider="target">
                                             <rect key="frame" x="104" y="40" width="252" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NJg-TM-Q1P" firstAttribute="top" secondItem="cre-wP-GdW" secondAttribute="bottom" constant="8" symbolic="YES" id="0Sa-iG-ckV"/>
+                                        <constraint firstItem="Q08-9C-RFU" firstAttribute="centerY" secondItem="Wwv-Nb-XPZ" secondAttribute="centerY" id="6S4-Nh-S6T"/>
+                                        <constraint firstItem="Q08-9C-RFU" firstAttribute="leading" secondItem="Wwv-Nb-XPZ" secondAttribute="leading" id="7zu-gP-Ul7"/>
+                                        <constraint firstItem="cre-wP-GdW" firstAttribute="leading" secondItem="NJg-TM-Q1P" secondAttribute="leading" id="Tim-f5-ePR"/>
+                                        <constraint firstItem="cre-wP-GdW" firstAttribute="leading" secondItem="Q08-9C-RFU" secondAttribute="trailing" constant="14" id="YOJ-Pg-tiM"/>
+                                        <constraint firstItem="cre-wP-GdW" firstAttribute="trailing" secondItem="Wwv-Nb-XPZ" secondAttribute="trailingMargin" id="csc-3E-jiR"/>
+                                        <constraint firstItem="Q08-9C-RFU" firstAttribute="top" secondItem="Wwv-Nb-XPZ" secondAttribute="top" id="krc-st-yid"/>
+                                        <constraint firstItem="cre-wP-GdW" firstAttribute="top" secondItem="Wwv-Nb-XPZ" secondAttribute="topMargin" id="qWq-0v-dvX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="cre-wP-GdW" id="ZR1-R0-mVo"/>
@@ -181,7 +191,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ScratchCat-Small" width="500" height="500"/>
         <image name="defaultPhoto" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
